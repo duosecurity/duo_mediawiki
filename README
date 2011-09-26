@@ -1,0 +1,39 @@
+Duo Security Authentication Plugin for MediaWiki
+
+http://duosecurity.com/
+http://mediawiki.org/
+
+This is an extension used to perform Duo Security two-factor authentication for
+MediaWiki.
+
+Quick Start:
+
+1. Uncompress the DuoAuth tarball to the MediaWiki extensions directory.
+2. Make sure that $wgServer is set in LocalSettings.php
+3. Add the following settings to your LocalSettings.php file:
+
+# setup of DuoAuth plugin
+require_once( "$IP/extensions/DuoAuth/DuoAuth.php" );
+$wgRedirectOnLogin = 'Special:DuoAuth';
+$wgDuoIKey = '[The app's integration key]';
+$wgDuoSKey = '[The app's secret key]';
+$wgDuoHost = '[api-host].duosecurity.com';
+
+
+Start up mediawiki and login.
+
+IMPORTANT NOTE:
+Remember that this is only a means of authentication and does not take the
+place of an authorization scheme. You need to setup your own authorization
+scheme to fit your organization's needs using mechanisms that are outside of
+this extension's functionality..
+
+This extension does not handle any of the application configuration from the
+Duo Security perspective. All application configurations must be configured
+through the Duo Security administration web application.
+
+https://admin.duosecurity.com
+
+Steve Buck
+sbuck [ at ] tribonacci [ dot ] com
+http://tribonacci.com
