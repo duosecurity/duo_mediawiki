@@ -10,7 +10,13 @@ Quick Start:
 
 1. Uncompress the DuoAuth tarball to the MediaWiki extensions directory.
 2. Make sure that $wgServer is set in LocalSettings.php
-3. Add the following settings to your LocalSettings.php file:
+3. If you are using a private wiki, make sure you whitelist the DuoAuth page:
+
+# Append "Special:DuoAuth" to the $wgWhitelistRead array
+$wgWhitelistRead = array("Special:DuoAuth");
+
+
+4. Add the following settings to your LocalSettings.php file:
 
 # setup of DuoAuth plugin
 require_once( "$IP/extensions/DuoAuth/DuoAuth.php" );
