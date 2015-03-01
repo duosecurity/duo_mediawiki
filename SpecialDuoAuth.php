@@ -4,7 +4,6 @@ class SpecialDuoAuth extends SpecialPage {
 
   function __construct() {
     parent::__construct( 'DuoAuth' );
-    wfLoadExtensionMessages('DuoAuth');
   }
 
   function getName() {
