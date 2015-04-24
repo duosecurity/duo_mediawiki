@@ -4,7 +4,6 @@ class SpecialDuoAuth extends SpecialPage {
 
   function __construct() {
     parent::__construct( 'DuoAuth' );
-    wfLoadExtensionMessages('DuoAuth');
   }
 
   function getName() {
@@ -12,7 +11,7 @@ class SpecialDuoAuth extends SpecialPage {
   }
 
   function execute( $par ) {
-    global $wgUser, $mediaWiki, $wgRequest, $wgOut, $wgDuoIKey, $wgDuoSKey, $wgDuoHost, $IP, $wgServer, $wgScriptPath, $wgSecretKey;
+    global $wgUser, $mediaWiki, $wgRequest, $wgOut, $wgDuoIKey, $wgDuoSKey, $wgDuoHost, $IP, $wgServer, $wgScriptPath, $wgScript, $wgSecretKey;
 
     $this->setHeaders();
     require_once("$IP/extensions/DuoAuth/duo_web.php");
@@ -42,7 +41,7 @@ class SpecialDuoAuth extends SpecialPage {
         $wgUser->setId($_SESSION['id']);
         $wgUser->loadFromId();
         $wgUser->setCookies();
-        $wgOut->redirect("Main_Page");
+        $wgOut->redirect("$wgScript/Main Page");
       } else {
         $mediaWiki->restInPeace();
       }
