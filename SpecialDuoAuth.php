@@ -20,16 +20,22 @@ class SpecialDuoAuth extends SpecialPage {
         $username = $wgUser->getName();
         $uid = $wgUser->getId();
         $duo_token = Duo::signRequest($wgDuoIKey, $wgDuoSKey, $wgSecretKey, $wgUser->getName());
+
+        $iframe_attributes = array(
+            'id' => 'duo_iframe',
+            'data-host' => $wgDuoHost,
+            'data-sig-request' => $duo_token,
+            'frameborder' => '0',
+        );
+        $iframe_attributes = array_map(function($key, $value) {
+            return sprintf('%s="%s"', $key, $value);
+        }, array_keys($iframe_attributes), array_values($iframe_attributes));
+        $iframe_attributes = implode(" ", $iframe_attributes);
+
         $wgOut->addHtml('
-<script src="'. $wgServer . $wgScriptPath . '/extensions/DuoAuth/Duo-Web-v1.js"></script>
-<script>
-  Duo.init({
-    \'host\':\'' . $wgDuoHost . '\',
-    \'post_action\':\'\',
-    \'sig_request\':\'' . $duo_token . '\'
-  });
-</script>
-<iframe id="duo_iframe" style="width:100%;height:500px" frameborder="0"></iframe>
+<script src="'. $wgServer . $wgScriptPath . '/extensions/DuoAuth/Duo-Web-v2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="'. $wgServer . $wgScriptPath . '/extensions/DuoAuth/Duo-Frame.css">
+<iframe ' . $iframe_attributes . '></iframe>
         ');
       $wgUser->logout();
       $_SESSION['du'] = $username;
