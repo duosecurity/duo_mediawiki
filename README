@@ -25,6 +25,8 @@ $wgDuoIKey = '[The app's integration key]';
 $wgDuoSKey = '[The app's secret key]';
 $wgDuoHost = '[api-host].duosecurity.com';
 
+Additionally, ensure that $wgSecretKey is at leat 40 characters. MediaWiki's
+installer sets it to a 64-character random string by default.
 
 Start up mediawiki and login.
 
