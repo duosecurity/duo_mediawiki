@@ -1,10 +1,10 @@
 Duo Security Authentication Plugin for MediaWiki
 
-http://duosecurity.com/
+https://duo.com
 http://mediawiki.org/
 
 This is an extension used to perform Duo Security two-factor authentication for
-MediaWiki.
+MediaWiki versions up to  and including 2.6.
 
 Quick Start:
 
