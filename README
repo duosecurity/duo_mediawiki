@@ -1,5 +1,10 @@
 Duo Security Authentication Plugin for MediaWiki
 
+[![Issues](https://img.shields.io/github/issues/duosecurity/duo_mediawiki)](https://github.com/duosecurity/duo_mediawiki/issues)
+[![Forks](https://img.shields.io/github/forks/duosecurity/duo_mediawiki)](https://github.com/duosecurity/duo_mediawiki/network/members)
+[![Stars](https://img.shields.io/github/stars/duosecurity/duo_mediawiki)](https://github.com/duosecurity/duo_mediawiki/stargazers)
+[![License](https://img.shields.io/badge/License-View%20License-orange)](https://github.com/duosecurity/duo_mediawiki/blob/master/LICENSE)
+
 https://duo.com
 http://mediawiki.org/
 
