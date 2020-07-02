@@ -1,5 +1,7 @@
 Duo Security Authentication Plugin for MediaWiki
 
+:exclamation: **This project is no longer being actively developed or maintained and will reach end of support on 9/30/2020.**
+
 [![Issues](https://img.shields.io/github/issues/duosecurity/duo_mediawiki)](https://github.com/duosecurity/duo_mediawiki/issues)
 [![Forks](https://img.shields.io/github/forks/duosecurity/duo_mediawiki)](https://github.com/duosecurity/duo_mediawiki/network/members)
 [![Stars](https://img.shields.io/github/stars/duosecurity/duo_mediawiki)](https://github.com/duosecurity/duo_mediawiki/stargazers)
